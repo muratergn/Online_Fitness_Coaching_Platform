@@ -1,8 +1,59 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Giriş Sayfası";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            height: 60px;
+            width: 100%;
+        }
+        #center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/thumbs_b_c_a45a436570252137e16bde70d0dc02fc.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 1);
+    height: calc(100vh - 110px);
+    width: 100%;
+    position: relative;
+    
+}
+#center h1 {
+    border-radius : 2px; 
+    font-family: 'Open Sans', sans-serif;
+    font-weight:800;
+    font-size: 3rem;
+    color: #DDF2FD;
+    text-align: center;
+}
+#center h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:800;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.blackSpan{
+    color: rgb(218, 55, 55);
+}
+    </style>
+</head>
+
+
+<div id="center">
+
+        <h1>ZAKUSKA
+            <span class="blackSpan">GYM</span>
+        </h1>
+        <h2>Sporun Doğru Adresi</h2>
+    </div>

@@ -1,0 +1,13 @@
+﻿@model KullaniciAntrenor 
+
+@{
+    ViewData["Title"] = "Admin";
+    Layout = "AdminLayout";
+}
+
+
+<form asp-controller="Admin" asp-action="KullaniciEkle" method="POST">
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Atama</button>
+    </div>
+</form>

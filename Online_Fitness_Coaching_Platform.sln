@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Fitness_Coaching_Platform", "Online_Fitness_Coaching_Platform\Online_Fitness_Coaching_Platform.csproj", "{EFAF2A73-7A83-46C0-95EB-4093B98A6317}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{C042C7BB-1D05-4A35-B4E0-8941E606E3F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EFAF2A73-7A83-46C0-95EB-4093B98A6317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFAF2A73-7A83-46C0-95EB-4093B98A6317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFAF2A73-7A83-46C0-95EB-4093B98A6317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C042C7BB-1D05-4A35-B4E0-8941E606E3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C042C7BB-1D05-4A35-B4E0-8941E606E3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C042C7BB-1D05-4A35-B4E0-8941E606E3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C042C7BB-1D05-4A35-B4E0-8941E606E3F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,37 @@
+﻿@model List<Mesajlasma>
+
+@{
+    ViewData["Title"] = "Antrenor";
+    Layout = "AntrenorLayout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminPanelIndex.css" />
+</head>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Gönderen İd
+            </th>
+            <th>
+                Mesaj
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+                <tr>
+                    <td>
+                    @Model[i].GonderenId
+                    </td>
+                    <td>
+                    @Model[i].Mesaj
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model AntrenmanProgrami
+
+@{
+    ViewData["Title"] = "Antrenor";
+    Layout = "AntrenorLayout";
+}
+
+<div>
+        @if (TempData["SuccessMessage2"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage2"]
+            </div>
+        }
+</div>
+@using (Html.BeginForm("AntrenmanProgramıHazırla", "Antrenor", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+            <div class="form-group">
+            <div class="row">
+                <label asp-for="@Model.EgsersizAdi" class="control-label">Egzersiz Adı</label>
+                @Html.TextAreaFor(modelItem => Model.EgsersizAdi, new { @class = "form-control" })
+            </div>
+            <div class="row">
+                <label asp-for="@Model.Hedef" class="control-label">Amaç</label>
+                @Html.TextAreaFor(modelItem => Model.Hedef, new { @class = "form-control" })
+            </div>
+            <div class="row">
+                <label asp-for="@Model.SetTekrarSayilari" class="control-label">Set Tekrar Sayısı</label>
+                @Html.TextAreaFor(modelItem => Model.SetTekrarSayilari, new { @class = "form-control",type = "number", min = 0, max = 30  })
+            </div>
+            <div class="row">
+                <label asp-for="@Model.VideoRehberleri" class="control-label">Video Rehberi</label>
+                @Html.TextBoxFor(modelItem => Model.VideoRehberleri, new { @class = "form-control" })
+            </div>
+            <div class="row">
+                <label asp-for="@Model.BaslamaTarihi" class="control-label">Başlama Tarihi</label>
+                <input asp-for="@Model.BaslamaTarihi" class="form-control" type="date" />
+            </div>
+            <div class="row">
+                <label asp-for="@Model.PrograminSuresi" class="control-label">Programın Süresi</label>
+            @Html.TextAreaFor(modelItem => Model.PrograminSuresi, new { @class = "form-control",type = "number", min = 0, max = 365 })
+            </div>
+            <div class="row">
+                <label asp-for="@Model.AliciId" class="control-label">Yapacak Kişi</label>
+                @Html.TextAreaFor(modelItem => Model.AliciId, new { @class = "form-control",type = "number", min = 0, max = 10000 })
+            </div>
+      
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+}

@@ -1,0 +1,42 @@
+﻿@model BeslenmeProgrami
+
+@{
+    ViewData["Title"] = "Antrenor";
+    Layout = "AntrenorLayout";
+}
+
+<div>
+    @if (TempData["SuccessMessage3"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage3"]
+        </div>
+    }
+</div>
+@using (Html.BeginForm("BeslenmeProgramıHazırla", "Antrenor", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="row">
+            <label asp-for="@Model.Hedef" class="control-label">Amaç</label>
+            @Html.TextAreaFor(modelItem => Model.Hedef, new { @class = "form-control" })
+        </div>
+        <div class="row">
+            <label asp-for="@Model.Kalori" class="control-label">Kalori</label>
+            @Html.TextAreaFor(modelItem => Model.Kalori, new { @class = "form-control",type = "number", min = 0, max = 10000  })
+        </div>
+        <div class="row">
+            <label asp-for="@Model.GunlukOgunler" class="control-label">Günlük Öğünler</label>
+            @Html.TextBoxFor(modelItem => Model.GunlukOgunler, new { @class = "form-control" })
+        </div>
+        <div class="row">
+            <label asp-for="@Model.AliciId" class="control-label">Yapacak Kişi</label>
+            @Html.TextAreaFor(modelItem => Model.AliciId, new { @class = "form-control",type = "number", min = 0, max = 10000 })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+}

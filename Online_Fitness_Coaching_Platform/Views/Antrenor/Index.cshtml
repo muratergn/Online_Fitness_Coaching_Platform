@@ -1,0 +1,66 @@
+﻿@model AntrenorEditModel
+
+@{
+    ViewData["Title"] = "Antrenor";
+    Layout = "AntrenorLayout";
+}
+
+@using (Html.BeginForm("BilgiGuncelleme", "Antrenor", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="@Model.FirstName" class="control-label"></label>
+                    @Html.TextAreaFor(modelItem => Model.FirstName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="@Model.LastName" class="control-label"></label>
+                    @Html.TextAreaFor(modelItem => Model.LastName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <label asp-for="@Model.Email" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <label asp-for="@Model.BirthDate" class="control-label"></label>
+                @Html.TextBoxFor(modelItem => Model.BirthDate, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <label asp-for="@Model.PhoneNumber" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.PhoneNumber, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <label asp-for="@Model.Active" class="control-label">Aktiflik</label>
+                @Html.TextAreaFor(modelItem => Model.Active, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <label asp-for="@Model.UzmanlikAlanlari" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.UzmanlikAlanlari, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <label asp-for="@Model.Deneyimleri" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.Deneyimleri, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Güncelle" class="btn btn-primary" />
+        </div>
+}

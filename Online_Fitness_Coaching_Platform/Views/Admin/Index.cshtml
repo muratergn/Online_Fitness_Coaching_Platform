@@ -1,0 +1,85 @@
+﻿@model List<KullaniciAktiflikModel>
+
+@{
+    ViewData["Title"] = "Admin";
+    Layout = "AdminLayout";
+}
+
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminPanelIndex.css" />
+</head>
+
+@using (Html.BeginForm("Aktiflik", "Admin", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Isim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Soyisim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Rol)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Aktiflik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].AktiflikDurum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model[0].Eposta)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].Isim, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].Soyisim, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].Rol, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(modelItem => Model[i].AktiflikDurum, new SelectList(
+                            new List<Object>{
+                                new { value = 1, text = "Aktif" },
+                                new { value = 0, text = "Pasif" }
+                            },
+                            "value",
+                            "text",
+                            Model[i].AktiflikDurum
+                        ))
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].Aktiflik, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(modelItem => Model[i].Eposta, new { @class = "form-control" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <input type="submit" value="Aktiflik Durumunu Güncelle" class="btn btn-primary" />
+    </div>
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+}
+

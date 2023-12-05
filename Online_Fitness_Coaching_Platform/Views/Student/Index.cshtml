@@ -1,0 +1,54 @@
+﻿@model KullaniciEditModel
+
+@{
+    ViewData["Title"] = "Kullanıcı";
+    Layout = "KullaniciLayout";
+}
+
+@using (Html.BeginForm("BilgiGuncelleme", "Student", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.Ad" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.Ad, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.Soyad" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.Soyad, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.Eposta" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.Eposta, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.DogumTarihi" class="control-label"></label>
+                @Html.TextBoxFor(modelItem => Model.DogumTarihi, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.TelefonNumarasi" class="control-label"></label>
+                @Html.TextAreaFor(modelItem => Model.TelefonNumarasi, new { @class = "form-control" })
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="@Model.Aktiflik" class="control-label">Aktiflik</label>
+                @Html.TextAreaFor(modelItem => Model.Aktiflik, new { @class = "form-control" })
+                </div>
+            </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Güncelle" class="btn btn-primary" />
+    </div>
+}

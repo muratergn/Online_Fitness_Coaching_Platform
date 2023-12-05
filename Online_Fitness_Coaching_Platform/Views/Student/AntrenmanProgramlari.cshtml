@@ -1,0 +1,60 @@
+﻿@model List<AntrenmanProgrami>
+
+@{
+    ViewData["Title"] = "Kullanici";
+    Layout = "KullaniciLayout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminPanelIndex.css" />
+</head>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Egsersiz Adı
+            </th>
+            <th>
+                Hedef
+            </th>
+            <th>
+                Set Tekrar Sayıları
+            </th>
+            <th>
+                Video Rehberi
+            </th>
+            <th>
+                Baslama Tarihi
+            </th>
+            <th>
+                Programin Suresi
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                        @Model[i].EgsersizAdi
+                </td>
+                <td>
+                        @Model[i].Hedef
+                </td>
+                <td>
+                        @Model[i].SetTekrarSayilari
+                <td>
+                        @Model[i].VideoRehberleri
+                </td>
+                <td>
+                        @Model[i].BaslamaTarihi
+                </td>
+                <td>
+                        @Model[i].PrograminSuresi
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,34 @@
+﻿@model Mesajlasma
+
+@{
+    ViewData["Title"] = "Kullanici";
+    Layout = "KullaniciLayout";
+}
+
+<div>
+    @if (TempData["SuccessMessage5"] != null)
+    {
+                <div class="alert alert-success">
+            @TempData["SuccessMessage5"]
+                </div>
+    }
+</div>
+@using (Html.BeginForm("MesajAt", "Student", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                <div class="row">
+            <label asp-for="@Model.Mesaj" class="control-label">Mesaj</label>
+            @Html.TextAreaFor(modelItem => Model.Mesaj, new { @class = "form-control" })
+                </div>
+                <div class="row">
+            <label asp-for="@Model.AliciId" class="control-label">Alıcı</label>
+            @Html.TextAreaFor(modelItem => Model.AliciId, new { @class = "form-control" })
+                </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Gönder" class="btn btn-primary" />
+                </div>
+}

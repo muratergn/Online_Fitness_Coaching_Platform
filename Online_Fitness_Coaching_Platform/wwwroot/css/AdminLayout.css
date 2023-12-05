@@ -1,0 +1,25 @@
+body {
+    padding-top: 56px; /* Üst navbar yüksekliði için padding ekleyin */
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 72px; /* Büyük ekranlarda üst navbar yüksekliði için padding ekleyin */
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px; /* Üst navbar yüksekliði */
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden;
+}
+
+.navbar {
+    z-index: 1030;
+}

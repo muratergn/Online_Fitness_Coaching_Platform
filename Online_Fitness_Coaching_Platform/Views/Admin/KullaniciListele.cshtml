@@ -1,0 +1,67 @@
+﻿@model List<RegisterModel>
+
+@{
+    ViewData["Title"] = "Admin";
+    Layout = "AdminLayout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminPanelIndex.css" />
+</head>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                İsim
+            </th>
+            <th>
+                Soyisim
+            </th>
+            <th>
+                Rol
+            </th>
+            <th>
+                Aktiflik
+            </th>
+            <th>
+                Eposta
+            </th>
+            <th>
+                Cinsiyet
+            </th>
+            <th>
+                Doğum Tarihi
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Model[i].FirstName
+                </td>
+                <td>
+                    @Model[i].LastName
+                </td>
+                <td>
+                    @Model[i].Status
+                </td>
+                <td>
+                    @Model[i].Active
+                </td>
+                <td>
+                    @Model[i].Email
+                </td>
+                <td>
+                    @Model[i].Gender
+                </td>
+                <td>
+                    @Model[i].BirthDate
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
